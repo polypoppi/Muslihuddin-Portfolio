@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+* {
+	margin: 0;
+	padding: 0;
+}
+.hero {
+	height: 100vh;
+	background: linear-gradient(45deg, rgba(255,175,189,.7), rgba(100,216,243,.7), rgba(234,236,198,.7), rgba(245,146,176,.7), rgba(52,219,216,.7)) 0 0 / 1000% no-repeat, url(resources/background.jpg) 0 0 / cover no-repeat;
+	-webkit-animation: gradientAnimation 40s ease infinite;
+	animation: gradientAnimation 40s ease infinite;
+}
+@-webkit-keyframes gradientAnimation {
+	0%   { background-position: 0% 30%, 0 0;}
+	50%  { background-position: 100% 70%, 0 0;}
+	100% { background-position: 0% 30%, 0 0;}
+}
+@keyframes gradientAnimation {
+	0%   { background-position: 0% 30%, 0 0;}
+	50%  { background-position: 100% 70%, 0 0;}
+	100% { background-position: 0% 30%, 0 0;}
+}
+/* Use Poppins Semibold for the font */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Semibold */
+    margin: 0; /* Remove default margin */
+}
+
+.navbar {
+    width: 100%; /* Adjust the width as needed */
+    margin: auto; /* Center the navbar horizontally */
+    padding: 2px 0; /* Reduce top and bottom padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white; /* Set the background to white */
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    margin-left: 50px; /* Add spacing to the left of the logo */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 50px; /* Remove default padding */
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0; /* Start with a width of 0 */
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease-in-out; /* Add smooth transition for width */
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; /* Expand the line on hover */
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+.content h1 {
+    color: #fff;
+    font-size: 70px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900; /* Semibold */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    /* Change the animation duration to 3 seconds and set animation-iteration-count to infinite */
+    animation: 
+      typing 3s steps(30, end) infinite,
+      blink-caret .5s step-end infinite;
+    /* Set a maximum width for the element */
+    max-width: 60%; /* You can adjust the value as needed */
+}
+
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    /* Add a delay after typing finishes */
+    100% { width: 100%; animation-timing-function: steps(1, end); animation-duration: 1s; }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+.content p{
+    font-size: 30px;
+    margin: 20px auto;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+/* Add this CSS to center the button */
+button {
+    color: #fff;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 500px auto; /* Center the button horizontally under the <p> */
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    display: block; /* Ensure the button takes up the full width */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Add cursor pointer for better UX */
+    transition: font-weight 0.3s; /* Add a transition for font-weight */
+}
+
+span {
+    background: transparent;
+    height: 100%;
+    width: 0; /* Start with a width of 0 */
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1; /* Change z-index to bring it above the button content */
+    transition: width 0.5s;
+    display: block; /* Ensure the <span> covers the entire button */
+    content: ''; /* Add content to ensure it's displayed */
+}
+
+button:hover {
+    color: white; /* Change text color to white on hover */
+    font-weight: 800; /* Increase font-weight during hover to make it bold */
+    font-size: 15px;
+}
+
+button:hover span {
+    width: 100%; /* Expand the span on hover */
+    z-index: 0; /* Move the <span> below the button text */
+}
+button a {
+    color: inherit; /* Inherit the color from the parent button */
+    text-decoration: none; /* Remove the underline */
+}
+
+.profile_photo {
+    display: block; /* Make the image a block-level element */
+    margin: 0 auto; /* Center the image horizontally within the div */
+    width: 200px;
+    padding-top: 70px;
+}
+
+.about_me {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1200; /* Semibold */
+    text-align: center; /* Center the text horizontally */
+    margin: 0 auto; /* Center the div itself horizontally on the page */
+    color: #f44336;
+    font-size: 60px;
+}
+
+.pitch {
+    font-family: 'Poppins', sans-serif;
+    text-align: center; 
+    margin: 0 auto;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+/* Styling for the "btn" button */
+.btn {
+    width: 250px;
+    height: 55px;
+    background-color: #f44336;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: -30px;
+}
+/* Styling for the "btn2" button */
+.btn2 {
+    width: 250px;
+    height: 55px;
+    background-color: transparent;
+    border: 2px solid #f44336;
+    font-size: 18px;
+    color: #f44336;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: -30px;
+}
+.btn2:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+.icon ion-icon {
+    font-size: 25px;
+    padding: 10px;
+    color: #f44336;
+    border-radius: 50%;
+    background-color: #dcd4d4ad;
+    margin: 20px 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.icon ion-icon:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.technology_heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1200; /* Semibold */
+    color: #f44336;
+    font-size: 50px;
+    padding: 20px;
+    margin-left: 50px;
+}
